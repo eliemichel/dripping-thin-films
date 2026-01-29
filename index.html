@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Dripping Thin Films for Real-time Digital Painting</title>
+		<link rel="canonical" href="https://eliemichel.github.io/dripping-thin-films/" />
+		<link rel="stylesheet" href="normalize.css" />
+		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</head>
+	<body class="h-entry">
+		<h1 class="p-name"><a class="u-url" href="https://eliemichel.github.io/dripping-thin-films/">Dripping Thin Films for Real-time Digital Painting</a></h1>
+
+		<div class="s-venue">
+			Computer Graphics Forum (Eurographics '<time class="dt-published" datetime="2026-05-04 12:00:00">26</time>)
+		</div>
+
+		<div class="s-authorlist">
+			<div class="p-author h-card">
+				<a class="p-name u-url" href="#">Zoé Herson</a>
+				<ul>
+					<li><a class="p-org h-card" href="https://research.adobe.com/">Adobe</a></li>
+				</ul>
+			</div>
+
+			<div class="p-author h-card">
+				<a class="p-name u-url" href="https://aparis69.github.io/">Axel Paris</a>
+				<ul>
+					<li><a class="p-org h-card" href="https://research.adobe.com/">Adobe</a></li>
+				</ul>
+			</div>
+
+			<div class="p-author h-card">
+				<a class="p-name u-url" href="https://research.adobe.com/person/elie-michel">Élie Michel</a>
+				<ul>
+					<li><a class="p-org h-card" href="https://research.adobe.com/">Adobe</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<main>
+			<figure>
+				<img alt="Teaser image" src="images/teaser.jpg" />
+				<figcaption>
+					We propose a formulation of a Thin Film model that provides control over the shape of dripping fluid fingers. We analyze its parameter-space
+					and extract principled parameters to control the dripping features. Combined with a pigment simulation (diffusion, advection, and mixing),
+					this expands the range of effects that can be artistically explored in a real-time painting simulation.
+				</figcaption>
+			</figure>
+
+			<ul class="s-download-links">
+				<li><a class="u-uid" href="https://doi.org/TODO">DOI</a></li>
+				<li><a href="documents/herson26dripping_thin_films.pdf">Paper (2.7 MB)</a></li>
+				<li><a href="documents/herson26dripping_thin_films_lowres.pdf">Lowres Paper (780 KB)</a></li>
+				<li><a href="https://youtu.be/_FBrXrZvp2E">Video</a></li>
+			</ul>
+
+			<section>
+				<h2>Abstract</h2>
+				<p class="p-summary s-content">
+					We present a real-time method to capture and simulate the dynamic behavior of watercolor painting. 
+					We develop a physically accurate, grid-based, real-time fluid simulation based on a reparameterized Thin Film model. 
+					The equations are rewritten so as to create principled parameters that finely control the length, thickness, and
+					frequency of dripping. Our close connection with physics allows both theoretical and experimental validation of our method.
+					The resulting system can reproduce dripping, fluid-air interface, and pigment advection and diffusion, all controllable by
+					the user in real-time. Our experiments show that artists can use our system to create interesting and varied digital paintings. 
+				</p>
+			</section>
+
+			<section>
+				<h2>Video</h2>
+				<iframe class="s-video" width="560" height="315" src="https://www.youtube-nocookie.com/embed/_FBrXrZvp2E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+			</section>
+
+			<section>
+				<h2>Overview</h2>
+				<figure>
+					<img alt="Figure 4" src="images/figure9.jpg" />
+					<!--<video loop autoplay muted>
+						<source src="videos/Pants.mp4" type="video/mp4">
+						Download: <a href="videos/Pants.mp4">Pants.mp4</a>
+					</video>-->
+					<figcaption>
+						Paint is modeled as a <strong>thin layer</strong> of fluid that carries <strong>pigments</strong>. It is encoded as
+						a heightfield $h$ governed by a Thin Film model, and a pigment field that is diffused
+						and advected along the fluid velocity.
+					</figcaption>
+				</figure>
+				<br/>
+				<figure>
+					<img alt="Figure 11" src="images/figure11.jpg" />
+					<figcaption>
+						Our Thin Film model enables the emergence of dripping fluid fingers. Combined with a pigment simulation (diffusion,
+						advection, and mixing), this can be used in a real-time painting simulation. Here we show two different settings
+						$\zeta$ for the pigment mixing (higher $\zeta$ fosters the color of flowing pigments over static ones).
+					</figcaption>
+				</figure>
+				<br/>
+				<figure>
+					<img alt="Figure 8" src="images/figure8.jpg" />
+					<figcaption>
+						We study the ranges of parameters for which our model produces dripping fluid fingers without artifacts.
+						See paper for details.
+					</figcaption>
+				</figure>
+				<br/>
+				<figure>
+					<img alt="Figure 4" src="images/figure4.jpg" />
+					<figcaption>
+						We add an extra force $\vec f \propto L$ along the normal direction of the canvas plane. This acts as a cohesive
+						force on the fluid (the opposite of a spread) which in practice tends to create longer dripping patterns.
+					</figcaption>
+				</figure>
+			</section>
+
+			<section>
+				<h2>Citation</h2>
+				<p class="s-citation">@article{herson26dripping,
+	title = {Dripping Thin Films for Real-time Digital Painting},
+	author = {Herson, Zoé and Paris, Axel and Michel, Élie},
+	journal = {Computer Graphics Forum (Eurographics '26)},
+	year = {2026},
+	publisher = {The Eurographics Association and John Wiley & Sons Ltd.},
+	doi = {TODO},
+}</p>
+			</section>
+
+			<footer>&nbsp;</footer>
+			<script>
+				MathJax = {
+					tex: {
+						inlineMath: {'[+]': [['$', '$']]}
+					},
+					svg: {
+						fontCache: 'global'
+					}
+				};
+			</script>
+			<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+		</main>
+	</body>
+</html>
